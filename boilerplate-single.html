@@ -136,7 +136,7 @@ class: center, middle, inverse
 ---
 layout: false
 name: agenda
-class: top, left
+class: agenda
 
 # Hvem hva hvor?
 
@@ -172,6 +172,7 @@ Distributed, Highly-Available, Key-Value store fra LinkedIn. Ligger på [GitHub]
 ]
 
 ---
+
 layout: false
 .left-column[
 ## Hva er Voldemort?
@@ -218,6 +219,13 @@ layout: false
 
 
 ]
+
+---
+layout: false
+class: center, middle, inverse
+
+## Teknisk
+
 ---
 
 layout: false
@@ -268,8 +276,12 @@ tuppel: [Node, versjonsnummer]
 
 .bigimage[![](src/resources/versioning.png)]
 
-Vi nevner dette fordi du kan være uheldig og måtte ta hensyn til dette.
 ]
+
+???
+
+Vi nevner dette fordi du kan være uheldig og måtte ta hensyn til dette.
+
 
 ---
 layout: false
@@ -277,22 +289,39 @@ layout: false
 ## CAP
 ## Consistent hashing?!
 ## Vektor klokker?!
-## asdf
+## Tunability
 ]
 .right-column[
-Alle puts får en (vektor)klokke, les: versjonsnummer.
 
-Beskriver historien til en key
+(N, R, W) er innstillingen som har mye å si for clusteret ditt i praksis.
 
-tuppel: [Node, versjonsnummer]
+Disse bestemmer hvor feiltolerant du vil være, og kan brukes for å finjustere ytelse.
 
-.bigimage[![](src/resources/versioning.png)]
+- N - required eveNtually
 
-Vi nevner dette fordi du kan være uheldig og måtte ta hensyn til dette.
+- R - required Readers
+
+- W - required Writers
+
+(3, 2, 2) er instillingen som LinkedIn og Amazon bruker i praksis.
+Aldri opplevd data-tap i prod.
+
+Rask read engine: (N, 1, W), der N = W.
+
+.bigimage[![](src/resources/)]
+
 ]
 
 ---
+layout: false
+.left-column[
+## Når?!
+]
+.right-column[
 
+]
+
+---
     </textarea>
     <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
     </script>
