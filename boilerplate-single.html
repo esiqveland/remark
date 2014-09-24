@@ -120,6 +120,31 @@
         .bigimage img {
             max-width: 420px;
         }
+        .spinimage {
+            -webkit-animation: spin 4s infinite ease;
+        }
+        @-webkit-keyframes spin {
+            0%  {-webkit-transform: rotate(0deg);}
+            100% {-webkit-transform: rotate(360deg);}
+        }
+        .masterimage img {
+            max-width: 100%;
+            margin-top: 80px;
+
+        }
+        .spinimage img {
+            max-width: 100%;
+            margin-top: 85px;
+            box-shadow: #333333;
+        }
+        .bannerimage {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+        }
+        .bannerimage img {
+            max-width: 100%;
+        }
 
     </style>
   </head>
@@ -128,25 +153,39 @@
 
 name: inverse
 layout: true
-class: center, middle, inverse
+class: center, inverse
 ---
 # Voldemort
-## og de 7 dvergene
+
+
+## .red[og de 7 dvergene]
+
+.bannerimage[![](src/resources/voldemort.jpg)]
+
+???
+
+Denne forsiden tok urimelig lang tid.
 
 ---
 layout: false
 name: agenda
 class: agenda
 
-# Hvem hva hvor?
+# Agenda
 
-- Hva, hvordan, og hvorfor Voldemort?
+1. Hva
 
-- Teknisk bakgrunn
+2. Hvordan
 
-- Bruke Voldemort
+3. Hvorfor
 
-- Hvorfor Voldemort?
+4. Teknisk bakgrunn
+
+5. Bruke Voldemort
+
+6. Hvorfor ikke Voldemort?
+
+7. Selfplug
 
 ---
 layout: false
@@ -315,11 +354,50 @@ Rask read engine: (N, 1, W), der N = W.
 ---
 layout: false
 .left-column[
-## Når?!
+## Når?
 ]
 .right-column[
 
+        Når skal man så bruke Voldemort?
+
+- enkle data: sesjonsdata, 'shopping-cart'
+
+- optimalisert for skriving! Den låser ikke objekter, og du skal _alltid_ få skrive data. Konflikter håndteres på _read_.
+
+- pluggable datastore. Kan backes av f.eks. Mysql eller BDB.
+
+Cons:
+
+- NO foreign keys, NO joins
+
+- en del jobb å administrere
+
+- applikasjonslogikk for håndtering av konflikter på read
+
 ]
+
+---
+class: center, inverse
+# SELFPLUG HYPETRAIN
+
+.spinimage[![](src/resources/hypetrain.png)]
+
+---
+
+.masterimage[![](src/resources/adaptive3node.png)]
+
+---
+# Used by
+
+- LinkedIn: a lot of purposes
+
+- eBay: high performance read-only engine
+
+- Ameba: R/W image store
+
+- AppScale
+
+- eHarmony
 
 ---
     </textarea>
