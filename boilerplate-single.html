@@ -262,13 +262,13 @@ layout: false
 ]
 .right-column[
 
-- Rask
+- Rask, over 25k req/s, svartid 99.9%: <50 ms
 
-- Skalerer
+- Skalerer horisontalt
 
-- Veldig tolerant overfor feil!
+- Veldig tolerant overfor feil! Tåler at noder kommer og går.
 
-- Tunable
+- Tilpasningsdyktig, kan dekke flere
 
 
 ]
@@ -296,6 +296,13 @@ layout: false
 .bigimage[![](src/resources/cap.png)]
 
 ]
+???
+
+- Consistency (all nodes see the same data at the same time)
+
+- Availability (a guarantee that every request receives a response about whether it was successful or failed)
+
+- Partition tolerance (the system continues to operate despite arbitrary message loss or failure of part of the system)
 
 ???
 
