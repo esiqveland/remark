@@ -304,9 +304,13 @@ layout: false
 
 - Partition tolerance (the system continues to operate despite arbitrary message loss or failure of part of the system)
 
-???
+Knut:
 
-Knut
+- Kan ikke få consistency, availability og partition tolerance. 
+- Consistency: Data er den samme til en hver tid på alle noder
+- Availability: Data er alltid tilgjengelig
+- Partition tolerance: Systemet fungerer selv om enkeltnoder forsvinner
+- Voldemort har da slacka på consistency for å oppnå høy availability og partition tolerence
 
 ---
 layout: false
@@ -354,7 +358,8 @@ tuppel: [Node, versjonsnummer]
 
 Knut
 
-Vi nevner dette fordi du kan være uheldig og måtte ta hensyn til dette.
+- definere rekkefølge av eventer
+- Du kan være nødt til å ta hensyn til disse klokkene hvis du benytter voldemort
 
 
 ---
