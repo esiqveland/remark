@@ -149,6 +149,13 @@
             max-width: 100%;
         }
 
+        .terning img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+        }
+
     </style>
   </head>
   <body>
@@ -159,7 +166,6 @@ layout: true
 class: center, inverse
 ---
 # Voldemort
-
 
 .bannerimage[![](src/resources/voldemort.jpg)]
 
@@ -250,7 +256,7 @@ store.delete(key)
 
 ???
 
-Eivind
+Knut
 
 ---
 layout: false
@@ -347,6 +353,35 @@ layout: false
 .left-column[
 ## CAP
 ## Consistent hashing?!
+## Eventual Consistency
+]
+.right-column[
+
+- Writes propagnerer gradvis
+
+- Relaxer consistency ved å ikke låse objektet som skrives til i hele systemet.
+
+- Systemet er alltid tilgjengelig for skriving
+
+#### Tradeoffs:
+
+- Litt som i Git
+
+- Som utvikler må du ta stilling til at du kan få tilbake flere versjoner.
+
+]
+
+???
+
+Knut
+
+---
+
+layout: false
+.left-column[
+## CAP
+## Consistent hashing?!
+## Eventual Consistency
 ## Vektor klokker?!
 ]
 .right-column[
@@ -367,12 +402,13 @@ Knut
 - definere rekkefølge av eventer
 - Du kan være nødt til å ta hensyn til disse klokkene hvis du benytter voldemort
 
-
 ---
+
 layout: false
 .left-column[
 ## CAP
 ## Consistent hashing?!
+## Eventual Consistency
 ## Vektor klokker?!
 ## Tunability
 ]
@@ -435,6 +471,38 @@ Knut
 Eksempel med handlevogn fra Amazon
 
 ---
+
+# Vår vurdering av Voldemort:
+
+"It is still a new system which has rough edges, bad error messages, and probably plenty of uncaught bugs. Let us know if you find one of these, so we can fix it."
+
+???
+
+Inspirert av Magnus triller vi terning
+
+---
+
+# Vår vurdering av Voldemort:
+
+.terning[![](src/resources/dice2.jpg)]
+
+???
+
+Eivind
+
+- Lite aktivitet utenom LinkedIn
+- Lite adopsjon
+- Snevert bruksområde
+- Server/Client er ikke adskilt
+- Ingen maven
+
+---
+
+# Tilbakemeldinger
+
+https://survs.com/survey/bm9vm4ld28
+
+---
 # Used by
 
 - LinkedIn: a lot of purposes
@@ -447,12 +515,7 @@ Eksempel med handlevogn fra Amazon
 
 - eHarmony
 
----
-
-# Tilbakemeldinger
-
-https://survs.com/survey/bm9vm4ld28
-
+--- 
 
     </textarea>
     <!--<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">-->
