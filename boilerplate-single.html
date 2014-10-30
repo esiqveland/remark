@@ -357,17 +357,23 @@ layout: false
 ]
 .right-column[
 
-- Writes propagnerer gradvis
 
-- Relaxer consistency ved å ikke låse objektet som skrives til i hele systemet.
+#### Hva er det?
+- Writes propagerer gradvis
+
+- Relaxer consistency ved å ikke låse objektet som skrives til i hele systemet
 
 - Systemet er alltid tilgjengelig for skriving
 
 #### Tradeoffs:
 
-- Litt som i Git
+- Merge conflict?! 
 
-- Som utvikler må du ta stilling til at du kan få tilbake flere versjoner.
+- Som utvikler må du ta stilling til at du kan få tilbake flere versjoner
+
+#### Benefits:
+
+- Du kan skrive til databasen under en nettverkssplitt og med noder som er nede
 
 ]
 
@@ -438,23 +444,20 @@ Rask read engine: (N, 1, W), der N = W.
 Eivind
 
 ---
-layout: false
-.left-column[
 
-## Når?
+# Vår vurdering av Voldemort:
 
-]
-.right-column[
+"It is still a new system which has rough edges, bad error messages, and probably plenty of uncaught bugs. Let us know if you find one of these, so we can fix it."
 
-        Når skal man så bruke Voldemort?
+### Pros:
 
-- enkle data: sesjonsdata, 'shopping-cart'
+- Linær skalering
 
-- optimalisert for skriving! Den låser ikke objekter, og du skal _alltid_ få skrive data. Konflikter håndteres på _read_.
+- Høy tilgjengelighet
 
-- pluggable datastore. Kan backes av f.eks. Mysql eller BDB.
+- Høy ytelse
 
-Cons:
+### Cons:
 
 - NO foreign keys, NO joins
 
@@ -462,21 +465,8 @@ Cons:
 
 - applikasjonslogikk for håndtering av konflikter på read
 
-]
-
 ???
-
-Knut
-
-Eksempel med handlevogn fra Amazon
-
----
-
-# Vår vurdering av Voldemort:
-
-"It is still a new system which has rough edges, bad error messages, and probably plenty of uncaught bugs. Let us know if you find one of these, so we can fix it."
-
-???
+Eivind
 
 Inspirert av Magnus triller vi terning
 
