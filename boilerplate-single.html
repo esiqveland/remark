@@ -142,6 +142,9 @@
             bottom: 0px;
             left: 0px;
         }
+        .ringimage img {
+            max-width: 320px;
+        }
         .bannerimage img {
             max-width: 100%;
         }
@@ -258,13 +261,13 @@ layout: false
 ]
 .right-column[
 
-- Rask
+- Rask, over 25k req/s, svartid 99.9%: <50 ms
 
-- Skalerer
+- Skalerer horisontalt
 
-- Veldig tolerant overfor feil!
+- Veldig tolerant overfor feil! Tåler at noder kommer og går.
 
-- Tunable
+- Tilpasningsdyktig, kan dekke flere behov
 
 - "Always" writeable
 
@@ -290,14 +293,30 @@ layout: false
 .right-column[
 
         Databaser handler om tradeoffs:
+        - availability
+        - consistency
+        - partition tolerance
 
 .bigimage[![](src/resources/cap.png)]
 
 ]
-
 ???
 
-Knut
+- Consistency (all nodes see the same data at the same time)
+
+- Availability (a guarantee that every request receives a response about whether it was successful or failed)
+
+- Partition tolerance (the system continues to operate despite arbitrary message loss or failure of part of the system)
+
+Knut:
+
+- Eventual consitant
+
+- Kan ikke få consistency, availability og partition tolerance. 
+- Consistency: Data er den samme til en hver tid på alle noder
+- Availability: Data er alltid tilgjengelig
+- Partition tolerance: Systemet fungerer selv om enkeltnoder forsvinner
+- Voldemort har da slacka på consistency for å oppnå høy availability og partition tolerence
 
 ---
 layout: false
@@ -345,7 +364,8 @@ tuppel: [Node, versjonsnummer]
 
 Knut
 
-Vi nevner dette fordi du kan være uheldig og måtte ta hensyn til dette.
+- definere rekkefølge av eventer
+- Du kan være nødt til å ta hensyn til disse klokkene hvis du benytter voldemort
 
 
 ---
@@ -373,7 +393,7 @@ Aldri opplevd data-tap i prod.
 
 Rask read engine: (N, 1, W), der N = W.
 
-.bigimage[![](src/resources/)]
+.ringimage[![](src/resources/hashring.png)]
 
 ]
 
@@ -384,7 +404,9 @@ Eivind
 ---
 layout: false
 .left-column[
+
 ## Når?
+
 ]
 .right-column[
 
@@ -409,6 +431,8 @@ Cons:
 ???
 
 Knut
+
+Eksempel med handlevogn fra Amazon
 
 ---
 # Used by
