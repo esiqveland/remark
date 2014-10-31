@@ -190,9 +190,7 @@ class: agenda
 
 4. Teknisk bakgrunn
 
-5. Bruk av Voldemort
-
-6. Vår vurdering av Voldemort
+5. Vår vurdering av Voldemort
 
 ???
 
@@ -316,10 +314,8 @@ layout: false
 
 Knut:
 
-- Eventual consitant
+- Eventually consistent
 
-- Kan ikke få consistency, availability og partition tolerance. 
-- Consistency: Data er den samme til en hver tid på alle noder
 - Availability: Data er alltid tilgjengelig
 - Partition tolerance: Systemet fungerer selv om enkeltnoder forsvinner
 - Voldemort har da slacka på consistency for å oppnå høy availability og partition tolerence
@@ -404,6 +400,8 @@ tuppel: [Node, versjonsnummer]
 ???
 
 Knut
+
+- Timestamps fungerer dårlig
 
 - definere rekkefølge av eventer
 - Du kan være nødt til å ta hensyn til disse klokkene hvis du benytter voldemort
