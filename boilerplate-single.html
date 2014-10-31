@@ -166,6 +166,7 @@ layout: true
 class: center, inverse
 ---
 # Voldemort
+### Eventual consistency
 
 .bannerimage[![](src/resources/voldemort.jpg)]
 
@@ -215,6 +216,11 @@ Distributed, Highly-Available, Key-Value store fra LinkedIn. Ligger på [GitHub]
     - Partisjonering (oppdeling!) av datasettet
 
     - Håndtering av feil
+
+- Begrenset API:
+    - Put
+    - Get
+    - Delete
 
 .footnote[.red[*] I client routing modus.]
 ]
@@ -306,18 +312,14 @@ layout: false
 ]
 ???
 
-- Consistency (all nodes see the same data at the same time)
-
-- Availability (a guarantee that every request receives a response about whether it was successful or failed)
-
-- Partition tolerance (the system continues to operate despite arbitrary message loss or failure of part of the system)
-
 Knut:
 
 - Eventually consistent
 
 - Availability: Data er alltid tilgjengelig
 - Partition tolerance: Systemet fungerer selv om enkeltnoder forsvinner
+- Consistency: Data er den samme i hele systemet
+
 - Voldemort har da slacka på consistency for å oppnå høy availability og partition tolerence
 
 ---
